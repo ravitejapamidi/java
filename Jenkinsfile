@@ -21,7 +21,7 @@ pipeline{
         stage('Deploy to Tomcat') {
             steps {
                 // Copy the generated WAR file to Tomcat webapps directory
-                sh 'cp target/jb-hello-world-maven-0.2.0.jar/opt/tomcat/webapps/'
+                sh 'cp /var/lib/jenkins/workspace/ABC/target/jb-hello-world-maven-0.2.0.jar'
             } 
         } 
     }
