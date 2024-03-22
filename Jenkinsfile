@@ -15,6 +15,10 @@ pipeline{
         stage('build'){
             steps{
                sh 'mvn package'
+         stage('Deploy to Tomcat') {
+            steps {
+                // Copy the generated WAR file to Tomcat webapps directory
+                sh 'cp target/your-web-app.war /opt/tomcat/webapps/'
             }
         }
     }
