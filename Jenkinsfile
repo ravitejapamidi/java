@@ -1,10 +1,6 @@
 pipeline{
     agent any
-
-    /*tools {
-         maven 'maven'
-         jdk 'java'
-    }*/
+    
 
     stages{
         stage('checkout'){
@@ -15,6 +11,9 @@ pipeline{
         stage('build'){
             steps{
                sh 'mvn package'
+            }
+        }
+            
          stage('Deploy to Tomcat') {
             steps {
                 // Copy the generated WAR file to Tomcat webapps directory
@@ -22,5 +21,4 @@ pipeline{
             }
         }
     }
-}
 }
