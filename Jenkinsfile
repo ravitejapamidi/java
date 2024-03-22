@@ -10,7 +10,11 @@ pipeline{
         }
         stage('build'){
             steps{
-               sh 'mvn package'
+                sh 'mvn --version'
+                sh 'mvn install'
+                sh 'mvn test'
+                sh 'mvn compile'
+                sh 'mvn package'
             }
         }
             
